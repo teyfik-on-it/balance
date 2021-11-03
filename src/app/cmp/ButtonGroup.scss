@@ -1,0 +1,19 @@
+.button-group {
+  @apply flex justify-center p-4;
+
+  .button-group-item {
+    @apply px-4 py-2 ml-4 first:ml-0;
+    @apply bg-blue-100 text-blue-800 hover:bg-blue-200;
+    @apply shadow-md rounded-md;
+    @apply cursor-pointer select-none transition-colors;
+
+    &.active {
+      @apply bg-blue-400 text-white;
+    }
+
+    &.disabled {
+      @apply bg-gray-100 text-gray-700 opacity-60;
+      @apply cursor-not-allowed;
+    }
+  }
+}
