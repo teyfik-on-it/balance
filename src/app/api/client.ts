@@ -1,14 +1,23 @@
 import Axios from 'axios';
 import { ApiError } from './errors/ApiError';
 
+/**
+ * Partial axios response
+ */
 interface Response {
   data: Success | Failure;
 }
 
+/**
+ * Successfull response body
+ */
 interface Success {
   success: true;
 }
 
+/**
+ * Failed response body with details
+ */
 interface Failure {
   success: false;
   error: {
@@ -26,6 +35,9 @@ const client = Axios.create({
   },
 });
 
+/**
+ * Handles succesfull HTTP response with API specific error
+ */
 client.interceptors.response.use((value) => {
   const { data } = value as Response;
 

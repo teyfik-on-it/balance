@@ -10,6 +10,11 @@ import useFindWallet from '../../hooks/useFindWallet';
 import { exchange } from '../../reducer/wallets';
 import './Exchange.scss';
 
+/**
+ * Gives functionality transferring balances
+ * between wallets with current exchange rates
+ * to the application
+ */
 const Exchange = () => {
   const wallets = useAppSelector((state) => map(state.wallets.items, 'id'));
 

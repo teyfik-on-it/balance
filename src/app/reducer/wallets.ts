@@ -30,6 +30,9 @@ const wallets = createSlice({
   name: 'wallets',
   initialState,
   reducers: {
+    /**
+     * Transfer's specified balance from one wallet to another
+     */
     exchange: (state, action: PayloadAction<Exchange>) => {
       const { from, to, amount, rate } = action.payload;
 

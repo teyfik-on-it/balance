@@ -2,6 +2,15 @@ import BigNumber from 'bignumber.js';
 import { useCallback } from 'react';
 import { useAppSelector } from '../hooks';
 
+/**
+ * Returns a helper function for currency conversion
+ *
+ * @example
+ * // returns 0.87 (at Nov 4, 09:50 UTC)
+ * const convert = useConvert();
+ *
+ * convert('USD', 'EUR', 1);
+ */
 const useConvert = () => {
   const rates = useAppSelector((state) => state.rates.data);
 
