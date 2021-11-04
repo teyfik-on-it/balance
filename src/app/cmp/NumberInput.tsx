@@ -21,7 +21,7 @@ interface Props {
 const NumberInput = ({ value, onChange, prefix, invalid }: Props) => (
   <NumberFormat
     value={value}
-    prefix={prefix + ' '}
+    prefix={prefix ? prefix + ' ' : ''}
     decimalScale={6}
     allowNegative={false}
     allowEmptyFormatting={false}
