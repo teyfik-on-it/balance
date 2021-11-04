@@ -9,7 +9,7 @@ interface Props extends LiHTMLAttributes<HTMLLIElement> {
 const ButtonGroupItem = ({ active, disabled, ...props }: PropsWithChildren<Props>) => (
   <li
     {...props}
-    tabIndex={0}
+    tabIndex={disabled ? -1 : 0}
     className={
       'button-group-item' +
       (disabled ? ' disabled' : '') +

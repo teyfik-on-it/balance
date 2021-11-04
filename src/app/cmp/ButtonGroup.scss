@@ -1,5 +1,5 @@
 .button-group {
-  @apply flex justify-center p-4;
+  @apply flex justify-between;
 
   .button-group-item {
     @apply px-4 py-2 ml-4 first:ml-0;

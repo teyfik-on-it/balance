@@ -1,6 +1,7 @@
 import {
   Children,
   cloneElement,
+  HTMLAttributes,
   KeyboardEvent,
   ReactElement,
   useCallback,
@@ -8,13 +9,19 @@ import {
 import './ButtonGroup.scss';
 import { ButtonGroupItemProps } from './ButtonGroupItem';
 
-interface Props {
+interface Props extends Omit<HTMLAttributes<HTMLUListElement>, 'onChange'> {
   value: string;
   children: ReactElement<ButtonGroupItemProps>[];
   onChange?: (value: string) => void;
 }
 
-const ButtonGroup = ({ value, children, onChange }: Props) => {
+const ButtonGroup = ({
+  value,
+  children,
+  onChange,
+  className,
+  ...props
+}: Props) => {
   const handle = useCallback(
     (item: ReactElement<ButtonGroupItemProps>) => {
       if (item.props.disabled) {
@@ -29,7 +36,7 @@ const ButtonGroup = ({ value, children, onChange }: Props) => {
   );
 
   return (
-    <ul className={'button-group'}>
+    <ul className={'button-group ' + (className ?? '')} {...props}>
       {Children.map(children, (item) =>
         cloneElement(item, {
           active: value === item.props.value,
