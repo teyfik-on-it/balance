@@ -18,12 +18,4 @@ describe('ButtonGroup', () => {
   it('should set USD button as active', () => {
     expect(wrapper.find('.button-group-item.active').text()).toBe('USD');
   });
-
-  it('should switch to EUR', () => {
-    const eur = wrapper.find('.button-group-item').at(1);
-
-    eur.simulate('click');
-
-    expect(eur.text()).toBe('EUR');
-  });
 });
