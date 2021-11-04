@@ -5,6 +5,11 @@ import App from './App';
 import { store } from './app/store';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
+import BigNumber from 'bignumber.js';
+
+BigNumber.config({
+  DECIMAL_PLACES: 6,
+});
 
 ReactDOM.render(
   <React.StrictMode>

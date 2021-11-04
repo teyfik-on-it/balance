@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import NumberFormat from 'react-number-format';
+import './NumberInput.scss';
 
 interface Props {
   value: number;
@@ -28,15 +29,7 @@ const NumberInput = ({ value, onChange, prefix, invalid }: Props) => {
           console.log(prefix + ' floatValue', floatValue);
         }
       }}
-      className={
-        'block w-full px-4 py-2 ' +
-        'text-2xl border ' +
-        (invalid
-          ? 'text-red-600 border-red-200 bg-red-100 '
-          : 'text-gray-700 border-gray-100 ') +
-        'shadow-md rounded-md ' +
-        'transition-colors'
-      }
+      className={'number-input ' + (invalid ? 'invalid ' : '')}
     />
   );
 };

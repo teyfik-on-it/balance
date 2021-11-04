@@ -1,9 +1,11 @@
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import rates from './reducer/rates';
+import wallets from './reducer/wallets';
 
 export const store = configureStore({
   reducer: {
     rates,
+    wallets,
   },
 });
 
