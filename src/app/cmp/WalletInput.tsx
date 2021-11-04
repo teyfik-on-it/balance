@@ -7,12 +7,31 @@ import NumberInput from './NumberInput';
 import './WalletInput.scss';
 
 interface Props extends Omit<HTMLAttributes<HTMLDivElement>, 'onChange'> {
+  /**
+   * Will be passed to child NumberInput
+   */
   value: number;
+  /**
+   * Will be passed to child NumberInput
+   */
   onChange: (value: number) => void;
+  /**
+   * Current wallet
+   */
   wallet: Wallet;
+  /**
+   * Inform's user about insufficient balance 
+   * and also will be passed to child NumberInput
+   * to do a similar functionality
+   */
   invalid?: boolean;
 }
 
+/**
+ * Number input with wallet's balance information
+ * also notify's user when balance is insufficient
+ * or updated
+ */
 const WalletInput = ({
   value,
   wallet,

@@ -10,11 +10,23 @@ import './ButtonGroup.scss';
 import { ButtonGroupItemProps } from './ButtonGroupItem';
 
 interface Props extends Omit<HTMLAttributes<HTMLUListElement>, 'onChange'> {
+  /**
+   * Specified in child ButtonGroupItem component's "value" prop
+   */
   value: string;
+  /**
+   * Takes an array of ButtonGroupItems
+   */
   children: ReactElement<ButtonGroupItemProps>[];
+  /**
+   * Triggers when active button changed
+   */
   onChange?: (value: string) => void;
 }
 
+/**
+ * A group of buttons with a horizontal layout that works as same as a radio group
+ */
 const ButtonGroup = ({
   value,
   children,

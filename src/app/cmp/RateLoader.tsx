@@ -2,6 +2,11 @@ import React, { PropsWithChildren, ReactElement, useEffect } from 'react';
 import { useAppDispatch, useAppSelector } from '../hooks';
 import { fetchRates } from '../reducer/rates';
 
+/**
+ * Should be used as a parent by components
+ * that is interacting with rates to be sure
+ * that exchange rates are ready in the store
+ */
 const RateLoader = ({ children }: PropsWithChildren<{}>) => {
   const dispatch = useAppDispatch();
   const status = useAppSelector((state) => state.rates.status);
