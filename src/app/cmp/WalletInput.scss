@@ -1,0 +1,11 @@
+.wallet-input {
+  .balance {
+    @apply mt-2 px-4;
+    @apply text-right text-blue-400 font-mono;
+    @apply transition-colors;
+
+    &.invalid {
+      @apply text-red-600;
+    }
+  }
+}

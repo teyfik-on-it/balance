@@ -1,0 +1,10 @@
+.number-input {
+  @apply block w-full px-4 py-2;
+  @apply text-2xl text-gray-700 font-mono border-gray-100;
+  @apply border shadow-md rounded-md;
+  @apply transition-colors;
+
+  &.invalid {
+    @apply text-red-600 border-red-200 bg-red-100;
+  }
+}

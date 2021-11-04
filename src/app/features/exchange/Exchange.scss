@@ -1,0 +1,19 @@
+.exchange {
+  @apply p-4;
+
+  footer {
+    .submit {
+      @apply px-6 py-2 shadow-md rounded-md transition-all;
+      @apply bg-green-200 text-green-700;
+      @apply hover:bg-green-300 active:bg-green-200;
+
+      &.invalid {
+        @apply bg-red-200 text-red-700;
+      }
+
+      &.disabled {
+        @apply opacity-40 cursor-not-allowed;
+      }
+    }
+  }
+}

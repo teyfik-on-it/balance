@@ -1,0 +1,17 @@
+.app {
+  .branding,
+  main {
+    @apply max-w-sm mx-auto;
+  }
+
+  .app-header {
+    @apply py-2;
+    @apply bg-blue-400;
+
+    .branding {
+      @apply px-4;
+      @apply text-2xl text-white text-center font-serif;
+      @apply select-none;
+    }
+  }
+}
